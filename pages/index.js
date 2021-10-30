@@ -16,8 +16,9 @@ export default function Home({ artikels }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        <div className="relative bg-indigo-800 h-xxl">
-          <div className="flex justify-center text-center pt-52">
+        <div className="relative bg-indigo-800 h-xxl font-poppins">
+          <Navbar />
+          <div className="flex justify-center text-center pt-36">
             <div>
               <h1 className="text-lg md:text-3xl font-bold text-white">
                 Aplikasi Informasi Dan Penghitungan Zakat
@@ -27,7 +28,7 @@ export default function Home({ artikels }) {
               </p>
             </div>
           </div>
-          <div className="absolute mx-5 lg:mx-0 lg:top-1/2 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2 bg-white p-10 mt-5 lg:mt-xl rounded-xl shadow-xl">
+          <div className="absolute mx-5 sm:mx-10 lg:mx-0 lg:top-1/2 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2 bg-white p-10 mt-5 lg:mt-xl rounded-xl shadow-xl">
             <Tabs selectedTabClassName="bg-green-500 rounded-xl mb-3 text-white">
               <TabList>
                 <Tab>
@@ -46,8 +47,8 @@ export default function Home({ artikels }) {
             </Tabs>
           </div>
         </div>
-        <div className="mt-xxl"></div>
-        <div className="container px-5 md:m-auto">
+        <div className="mt-xxxl lg:mt-xxl"></div>
+        <div className="container px-5 md:m-auto font-poppins">
           <p className="text-lg font-bold text-gray-900 mb-3">
             Informasi tentang zakat
           </p>
@@ -77,7 +78,7 @@ export default function Home({ artikels }) {
               ))}
           </div>
         </div>
-        {/* <Footer />  */}
+        <Footer />
       </div>
     </div>
   );
