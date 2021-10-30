@@ -2,6 +2,7 @@ import Head from "next/head";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { ZakatMaalCard, ZakatPenghasilanCard } from "../components";
+import { Footer } from "../components/Footer";
 import { Navbar } from "../components/Navbar";
 
 export default function PenghitungZakat() {
@@ -14,6 +15,7 @@ export default function PenghitungZakat() {
       </Head>
       <div>
         <Navbar />
+        <div className="mt-36"></div>
         <div className="my-10 lg:my-12 mx-5 lg:mx-32 xl:mx-96 shadow-xl rounded-xl p-10">
           <Tabs selectedTabClassName="bg-green-500 rounded-xl mb-3 text-white">
             <TabList>
@@ -32,11 +34,7 @@ export default function PenghitungZakat() {
             </TabPanel>
           </Tabs>
         </div>
-        <div className="flex justify-center">
-          <div className="fixed bottom-0 w-full text-center bg-green-500 py-2">
-            Build with ❤️ by Adiatsa
-          </div>
-        </div>
+        <Footer />
       </div>
     </div>
   );

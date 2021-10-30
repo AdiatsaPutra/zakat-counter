@@ -1,4 +1,4 @@
-import { Button } from "../Button";
+import { ButtonCount } from "../ButtonCount";
 import { useForm } from "react-hook-form";
 import React from "react";
 
@@ -20,7 +20,7 @@ const ZakatPenghasilanCard = (props) => {
 
   return (
     <div className="flex flex-col text-center py-5">
-      <p className="text-base text-gray-500 text-justify mb-3">
+      <p className="text-sm xl:text-base text-gray-500 text-justify mb-3">
         Zakat penghasilan atau yang dikenal juga sebagai zakat profesi adalah
         bagian dari zakat maal yang wajib dikeluarkan atas harta yang berasal
         dari pendapatan / penghasilan rutin dari pekerjaan yang tidak melanggar
@@ -53,7 +53,7 @@ const ZakatPenghasilanCard = (props) => {
           {...register("bonus")}
           className="rounded-md w-full border leading-tight h-10 ring-2 p-2 focus:outline-none ring-gray-300 focus:ring-green-300 transition duration-500"
         />
-        <Button />
+        <ButtonCount />
       </form>
       <h1 className="text-base">Zakat yang harus anda bayar:</h1>
       <h1 className="text-4xl font-bold">Rp {count.toLocaleString()},00</h1>

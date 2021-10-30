@@ -1,4 +1,4 @@
-import { Button } from "../Button";
+import { ButtonCount } from "../ButtonCount";
 import { useForm } from "react-hook-form";
 import React from "react";
 
@@ -24,7 +24,7 @@ const ZakatMaalCard = (props) => {
 
   return (
     <div className="flex flex-col text-center py-5">
-      <p className="text-base text-gray-500 text-justify mb-3">
+      <p className="text-sm xl:text-base text-gray-500 text-justify mb-3">
         Zakat maal yang dimaksud dalam perhitungan ini adalah zakat yang
         dikenakan atas uang, emas, surat berharga, dan aset yang disewakan.
         Tidak termasuk harta pertanian, pertambangan, dan lain-lain yang diatur
@@ -38,45 +38,57 @@ const ZakatMaalCard = (props) => {
         yang digunakan adalah sebesar 85 gram emas.
       </p>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <p className="text-left text-base mb-3">
-          Nilai emas, perak, dan/atau permata
-        </p>
-        <input
-          type="number"
-          {...register("emasPerakPermata", { required: true })}
-          defaultValue={count}
-          min={0}
-          className="mb-3 rounded-md w-full border leading-tight h-10 ring-2 p-2 focus:outline-none ring-gray-300 focus:ring-green-300 transition duration-500"
-        />
-        <p className="text-left text-base mb-3">
-          Uang tunai, tabungan, deposito
-        </p>
-        <input
-          type="number"
-          defaultValue={0}
-          min={0}
-          {...register("uangTunai", { required: true })}
-          className="rounded-md w-full border leading-tight h-10 ring-2 p-2 focus:outline-none ring-gray-300 focus:ring-green-300 transition duration-500"
-        />
-        <p className="text-left text-base mb-3">
-          Kendaraan, rumah, asset lainnya
-        </p>
-        <input
-          type="number"
-          defaultValue={0}
-          min={0}
-          {...register("kendaraan", { required: true })}
-          className="rounded-md w-full border leading-tight h-10 ring-2 p-2 focus:outline-none ring-gray-300 focus:ring-green-300 transition duration-500"
-        />
-        <p className="text-left text-base mb-3">Cicilan/hutang</p>
-        <input
-          type="number"
-          defaultValue={0}
-          min={0}
-          {...register("cicilan", { required: true })}
-          className="rounded-md w-full border leading-tight h-10 ring-2 p-2 focus:outline-none ring-gray-300 focus:ring-green-300 transition duration-500"
-        />
-        <Button />
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <p className="text-left text-base mb-3">
+              Nilai emas, perak, dan/atau permata
+            </p>
+            <input
+              type="number"
+              {...register("emasPerakPermata", { required: true })}
+              defaultValue={count}
+              min={0}
+              className="mb-3 rounded-md w-full border leading-tight h-10 ring-2 p-2 focus:outline-none ring-gray-300 focus:ring-green-300 transition duration-500"
+            />
+          </div>
+          <div>
+            <p className="text-left text-base mb-3">
+              Uang tunai, tabungan, deposito
+            </p>
+            <input
+              type="number"
+              defaultValue={0}
+              min={0}
+              {...register("uangTunai", { required: true })}
+              className="rounded-md w-full border leading-tight h-10 ring-2 p-2 focus:outline-none ring-gray-300 focus:ring-green-300 transition duration-500"
+            />
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <p className="text-left text-base mb-3">
+              Kendaraan, rumah, asset lainnya
+            </p>
+            <input
+              type="number"
+              defaultValue={0}
+              min={0}
+              {...register("kendaraan", { required: true })}
+              className="rounded-md w-full border leading-tight h-10 ring-2 p-2 focus:outline-none ring-gray-300 focus:ring-green-300 transition duration-500"
+            />
+          </div>
+          <div>
+            <p className="text-left text-base mb-3">Cicilan/hutang</p>
+            <input
+              type="number"
+              defaultValue={0}
+              min={0}
+              {...register("cicilan", { required: true })}
+              className="rounded-md w-full border leading-tight h-10 ring-2 p-2 focus:outline-none ring-gray-300 focus:ring-green-300 transition duration-500"
+            />
+          </div>
+        </div>
+        <ButtonCount />
       </form>
       <h1 className="text-base">Zakat yang harus anda bayar:</h1>
       <h1 className="text-4xl font-bold">Rp {count.toLocaleString()},00</h1>
